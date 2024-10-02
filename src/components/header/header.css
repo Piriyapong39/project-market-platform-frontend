@@ -1,0 +1,29 @@
+.header-container {
+    margin: 0;
+    background-color: red;
+    height: 60px; /* เพิ่มความสูงให้เหมาะสม */
+    display: flex; /* ใช้ flexbox */
+    align-items: center; /* จัดให้อยู่ตรงกลาง */
+    padding: 0 20px; /* เพิ่ม padding */
+}
+
+h1 {
+    margin: 0; /* ลบ margin */
+    color: white; /* เปลี่ยนสีของข้อความ */
+}
+
+nav ul {
+    list-style: none; /* ลบจุดหน้ารายการ */
+    padding: 0;
+    margin: 0; 
+    display: flex; /* ใช้ flexbox สำหรับการจัดเรียง */
+}
+
+nav li {
+    margin-left: 20px; /* เพิ่มระยะห่างระหว่างรายการ */
+}
+
+nav a {
+    color: white; /* เปลี่ยนสีของลิงก์ */
+    text-decoration: none; /* ลบขีดเส้นใต้ */
+}
