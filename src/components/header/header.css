@@ -1,29 +1,29 @@
 .header-container {
     margin: 0;
     background-color: red;
-    height: 60px; /* เพิ่มความสูงให้เหมาะสม */
-    display: flex; /* ใช้ flexbox */
-    align-items: center; /* จัดให้อยู่ตรงกลาง */
-    padding: 0 20px; /* เพิ่ม padding */
+    height: 60px; 
+    display: flex; 
+    align-items: center; 
+    padding: 0 20px; 
 }
 
 h1 {
-    margin: 0; /* ลบ margin */
-    color: white; /* เปลี่ยนสีของข้อความ */
+    margin: 0; 
+    color: white; 
 }
 
 nav ul {
-    list-style: none; /* ลบจุดหน้ารายการ */
+    list-style: none; 
     padding: 0;
     margin: 0; 
-    display: flex; /* ใช้ flexbox สำหรับการจัดเรียง */
+    display: flex; 
 }
 
 nav li {
-    margin-left: 20px; /* เพิ่มระยะห่างระหว่างรายการ */
+    margin-left: 20px; 
 }
 
 nav a {
-    color: white; /* เปลี่ยนสีของลิงก์ */
-    text-decoration: none; /* ลบขีดเส้นใต้ */
+    color: white; 
+    text-decoration: none; 
 }
