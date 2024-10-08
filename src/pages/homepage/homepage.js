@@ -1,9 +1,9 @@
-import { loadHeader } from '../../utilis/header-footer-navbar.js'; 
+import { loadHeader } from "../../utils/header-footer-navbar.js";
 
 document.addEventListener("DOMContentLoaded", function() {
     loadHeader()
         .then(() => {
-            return fetch("./homepage.html");  // โหลด homepage.html
+            return fetch("../src/pages/homepage/homepage.html");
         })
         .then(response => {
             if (!response.ok) {
