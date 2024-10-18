@@ -1,32 +1,35 @@
 
-// onclick to register
-document.querySelector(".form-register").addEventListener("submit", async(e)=>{
+if(localStorage.getItem("token")){
+    window.location.href = "./confirm-register/confirm-register.html"
+}
+
+document.querySelector(".seller-register-form").addEventListener("submit", async (e)=>{
     e.preventDefault();
+    console.log(e.target.email.value)
     const formData = {
         email: e.target.email.value,
-        password: e.target.password.value,
+        password: e.target.email.value,
         first_name: e.target.first_name.value,
         last_name: e.target.last_name.value,
         address: e.target.address.value
     }
     try {
-        const response = await fetch('http://localhost:8080/users/buyers/register', {
+        const response = await fetch("http://localhost:8080/users/sellers/register", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(formData)
         })
         const result = await response.json();
         if(response.ok){
+            console.log(result.data)
             alert(result.data)
-            window.location.href = "../login/login.html"
         }else{
-            console.log(result)
+            alert(result.error)
+            console.log(result.error)
         }
     } catch (error) {
         console.log(error)
     }
-
 })
-
