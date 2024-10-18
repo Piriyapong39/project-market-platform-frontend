@@ -24,7 +24,9 @@ document.querySelector(".seller-register-form").addEventListener("submit", async
         const result = await response.json();
         if(response.ok){
             console.log(result.data)
-            alert(result.data)
+            alert("Seller register successfully")
+            localStorage.setItem("token", result.data)
+            window.location.href = "../seller-homepage/seller.html"
         }else{
             alert(result.error)
             console.log(result.error)

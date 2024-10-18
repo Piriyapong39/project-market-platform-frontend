@@ -1,0 +1,39 @@
+
+.confirm-box{
+    height: 92.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-box div button{
+    padding: 150px;
+    border-radius: 40px;
+    font-size: 40px;
+    margin: 20px;
+}
+
+.confirm-box div button {
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 24px;
+    margin: 10px;
+    border: none;
+    background: linear-gradient(45deg, #43c6ac 0%, #81f1ac 99%, #81f1ac 100%);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.confirm-box div button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.confirm-box div button:active {
+    transform: translateY(2px);
+}
