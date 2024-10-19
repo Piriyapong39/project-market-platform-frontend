@@ -26,7 +26,7 @@ document.querySelector(".seller-register-form").addEventListener("submit", async
             console.log(result.data)
             alert("Seller register successfully")
             localStorage.setItem("token", result.data)
-            window.location.href = "../seller-homepage/seller.html"
+            window.location.href = "../seller-homepage/homepage-seller.html"
         }else{
             alert(result.error)
             console.log(result.error)

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
 })
 
-document.querySelector(".li-btn-logout button").addEventListener("click", async ()=>{
+document.querySelector(".global-btn-logout").addEventListener("click", async ()=>{
     localStorage.removeItem("token");
     window.location.href = "../login/login.html"
 })
