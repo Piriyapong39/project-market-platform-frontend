@@ -1,28 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Product</title>
 
-    <!-- Link css-->
-    <link rel="stylesheet" href="../../../styles//global.css">
+    <!-- Link css -->
+    <link rel="stylesheet" href="../../../styles/global.css">
     <link rel="stylesheet" href="../../../styles/global-header.css">
     <link rel="stylesheet" href="../../../styles/global-logout-btn.css">
+    <link rel="stylesheet" href="../../../styles/ิglobal-navbar.css">
+    <link rel="stylesheet" href="../../../styles/global-chart.css">
+    <link rel="stylesheet" href="./homepage-seller.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 </head>
 <body>
     <header class="global-header">
         <div>
             <ul>
-                <li><a href="#" >Seller Homepage</a></li>
+                <li><a href="#">Seller Homepage</a></li>
                 <li><a href="#">Stock</a></li>
                 <li><a href="#">Purchase Order</a></li>
-                <li><a href="#">Shipped </a></li>
+                <li><a href="#">Shipped</a></li>
                 <li><a href="#">Contact</a></li>
-                <li class="global-btn-logout" type="click"><button >Logout</button></li>
+                <li class="global-btn-logout"><button>Logout</button></li>
             </ul>
         </div>
     </header>
+    <div class="main-container">
+        <nav class="left-navbar">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <h1>Hello, [Name]</h1>
+            <div class="dashboard-summary">
+                <div class="summary-card">
+                    <h3>Total income</h3>
+                    <p class="summary-value">฿15,750</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Progress order</h3>
+                    <p class="summary-value">23</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Low stock</h3>
+                    <p class="summary-value">5</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <h2>Total month income</h2>
+                <canvas id="salesChart"></canvas>
+            </div>
+            <div class="dashboard-lower-section">
+                <div class="top-products">
+                    <h2>Best seller</h2>
+                    <ul>
+                        <li>
+                            <span class="product-name">Product A</span>
+                            <span class="product-sales">150 pieces</span>
+                        </li>
+                        <li>
+                            <span class="product-name">Product B</span>
+                            <span class="product-sales">120 pieces</span>
+                        </li>
+                        <li>
+                            <span class="product-name">Product C</span>
+                            <span class="product-sales">90 pieces</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="recent-notifications">
+                    <h2>Notification</h2>
+                    <ul>
+                        <li>Order 1</li>
+                        <li>Product x is less than 5 pieces</li>
+                        <li>5 message from client</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
     <script src="./homepage-seller.js"></script>
 </body>
 </html>

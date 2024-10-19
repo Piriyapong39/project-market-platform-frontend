@@ -1,0 +1,38 @@
+.chart-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin: 20px 0;
+    max-width: 800px;
+    width: 100%;
+}
+
+.chart-container h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+canvas#salesChart {
+    max-height: 400px;
+    width: 100% !important;
+    height: auto !important;
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        padding: 15px;
+    }
+    
+    .chart-container h2 {
+        font-size: 1.2rem;
+    }
+    
+    canvas#salesChart {
+        max-height: 300px;
+    }
+}
+
+

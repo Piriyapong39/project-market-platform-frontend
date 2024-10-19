@@ -9,6 +9,36 @@ document.addEventListener("DOMContentLoaded", async ()=>{
 })
 
 
+// Demo data
+const salesData = {
+    labels: ['Jan.', 'Feb.', 'March.', 'April.', 'May', 'June', 'July', "August"],
+    datasets: [{
+        label: 'Total',
+        data: [4000, 3000, 5000, 2780, 1890, 2390, 3490, 10000],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+    }]
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: salesData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+});
+
+
 document.querySelector(".global-btn-logout button").addEventListener("click", ()=>{
     localStorage.removeItem("token")
     window.location.reload();

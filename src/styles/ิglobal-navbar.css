@@ -1,0 +1,31 @@
+.left-navbar {
+    width: 150px;
+    background-color: #F9FAFB;
+    color: #374151;
+    padding: 20px;
+    border-right: 1px solid #E5E7EB;
+}
+
+.left-navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.left-navbar li {
+    margin-bottom: 8px;
+}
+
+.left-navbar a {
+    color: #6B7280;
+    text-decoration: none;
+    display: block;
+    padding: 10px 14px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-weight: 500;
+}
+
+.left-navbar a:hover {
+    background-color: #E5E7EB;
+    color: #1F2937;
+}
