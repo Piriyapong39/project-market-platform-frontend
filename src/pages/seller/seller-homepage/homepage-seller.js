@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", async ()=>{
 })
 
 
-
 document.querySelector(".global-btn-logout button").addEventListener("click", ()=>{
     localStorage.removeItem("token")
     window.location.reload();
