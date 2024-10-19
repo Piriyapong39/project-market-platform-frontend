@@ -7,3 +7,10 @@ document.addEventListener("DOMContentLoaded", async ()=>{
     }
     //const response = await fetch("http://localhost:8080/users/sellers")
 })
+
+
+
+document.querySelector(".global-btn-logout button").addEventListener("click", ()=>{
+    localStorage.removeItem("token")
+    window.location.reload();
+})
