@@ -3,9 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product Page</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./product.css">
+    <link rel="stylesheet" href="../../../../styles/global.css">
+    <link rel="stylesheet" href="../../../../styles/global-header.css">
+    <link rel="stylesheet" href="../../../../styles/global-navbar.css">
+    <link rel="stylesheet" href="../../../../styles/global-logout-btn.css">
 </head>
 <body>
+    <header class="global-header">
+        <div>
+            <ul>
+                <li><a href="../homepage-seller.html">Homepage</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Purchase Order</a></li>
+                <li><a href="#">Shipped</a></li>
+                <li><a href="#">Contact</a></li>
+                <li class="global-btn-logout"><button>Logout</button></li>
+            </ul>
+        </div>
+    </header>
+    <div class="main-container">
+        <nav class="left-navbar">
+            <ul>
+                <li>
+                    <a href="#">Dashboard</a>
+                    <ul>
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Statistics</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Products</a>
+                    <ul>
+                        <li><a href="./product/product.html">List All</a></li>
+                        <li><a href="#">Add New</a></li>
+                        <li><a href="#">Categories</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     
+        <!-- Table to display products -->
+        <div class="container-table">
+            <table>
+                <thead>
+                    <tr> 
+                        <th>Picture</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- function insertTableData insert Data here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./product.js"></script>
 </body>
 </html>
+

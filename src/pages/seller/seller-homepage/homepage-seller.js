@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async ()=>{
         console.log(result.data)
         document.querySelector(".content > h1:first-child").innerHTML = `Hello, ${result.data.first_name}`
     }else{
-        console.log(result.error)
+        window.location.href = "../../login/login.html"
     }
 })
 
