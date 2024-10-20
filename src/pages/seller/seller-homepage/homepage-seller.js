@@ -5,7 +5,21 @@ document.addEventListener("DOMContentLoaded", async ()=>{
     if(!token){
         window.location.href = "../../login/login.html"
     }
-    //const response = await fetch("http://localhost:8080/users/sellers")
+    const response = await fetch("http://localhost:8080/users/sellers/authen", {
+        method: "POST",
+        headers: {
+            "Content-Type": "appliaction/json",
+            "authorization": "Bearer" + " " + token
+        }
+    })
+
+    const result = await response.json();
+    if(response.ok){
+        console.log(result.data)
+        document.querySelector(".content > h1:first-child").innerHTML = `Hello, ${result.data.first_name}`
+    }else{
+        console.log(result.error)
+    }
 })
 
 
@@ -22,7 +36,7 @@ const salesData = {
 };
 
 document.addEventListener('DOMContentLoaded', function() {
-    const ctx = document.getElementById('salesChart').getContext('2d');
+    const ctx = document.querySelector('#salesChart').getContext('2d');
     new Chart(ctx, {
         type: 'line',
         data: salesData,
