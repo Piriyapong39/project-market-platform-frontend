@@ -7,7 +7,7 @@
   }
   .global-header div {
     width: 100%;
-    max-width: 1600px;
+    max-width: 100%;
     margin: 0 auto;
   }
   .global-header div ul {

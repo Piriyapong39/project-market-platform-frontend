@@ -4,6 +4,7 @@
     color: #374151;
     padding: 20px;
     border-right: 1px solid #E5E7EB;
+    z-index: 1;
 }
 
 .left-navbar ul {

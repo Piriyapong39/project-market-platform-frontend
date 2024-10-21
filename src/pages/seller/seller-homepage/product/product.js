@@ -1,3 +1,5 @@
+
+/* Reload function */
 document.addEventListener("DOMContentLoaded", async () => {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -23,6 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
+/* function get product to create table */
 function insertTableData(productData) {
     const tbody = document.querySelector(".container-table tbody");
     const baseUrl = "http://localhost:8080/picture-files"; 
@@ -57,10 +60,7 @@ function insertTableData(productData) {
 document.querySelector(".form-insert-product").addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // token
     const token = localStorage.getItem("token");
-
-    // 
     const form = document.querySelector(".form-insert-product")
     const formData = new FormData(form);
     try {
@@ -85,6 +85,23 @@ document.querySelector(".form-insert-product").addEventListener("submit", async 
         console.log(error)
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
