@@ -8,8 +8,10 @@
     <!-- Link CSS -->
     <link rel="stylesheet" href="./product.css">
     <link rel="stylesheet" href="../../../../styles/global.css">
+    <link rel="stylesheet" href="../../../../styles/global-btn.css">
     <link rel="stylesheet" href="../../../../styles/global-header.css">
     <link rel="stylesheet" href="../../../../styles/global-navbar.css">
+    <link rel="stylesheet" href="../../../../styles/global-popup.css">
     <link rel="stylesheet" href="../../../../styles/global-logout-btn.css">
 </head>
 <body>
@@ -45,9 +47,60 @@
                 </li>
             </ul>
         </nav>
-    
         <!-- Table to display products -->
         <div class="container-table">
+            <div>
+
+                <!-- Insert product -->
+                <button class="global-btn" id="open-popup-btn">Insert product</button>
+                <button class="global-btn" id="open-popup-btn">Update product</button>
+                <button class="global-btn">Delete product</button>
+
+                <!-- Pop up start here -->
+                <div class="global-popup">
+                    <div class="overlay"></div>
+                    <div class="popup">
+                        <form class="form-insert-product">
+                            <div>
+                                <label for="product_name">Product Name: </label>
+                                <input type="text" name="product_name" placeholder="Your product name" >
+                            </div>
+                            <div>
+                                <label for="product_desc">Product Description: </label>
+                                <input type="text" name="product_desc" placeholder="Your product description" >
+                            </div>
+                            <div>
+                                <label for="product_price">Product Price: </label>
+                                <input type="number" name="product_price" placeholder="Your product price" step="0.01" >
+                            <div>
+                                <label for="product_stock">Product Stock: </label>
+                                <input type="number" name="product_stock"  placeholder="Your product name" >
+                            </div>
+                            <div>
+                                <label for="category_id">Category: </label>
+                                <select name="category_id" >
+                                    <option value="1">Electronics</option>
+                                    <option value="2">Automotive Part</option>
+                                    <option value="3">Stationary</option>
+                                    <option value="4">Phone and Accessory</option>
+                                    <option value="5">Entertainment</option>
+                                    <option value="6">Outfit</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="files">Choose pictures: </label>
+                                <input type="file" id="files" name="files" multiple accept="image/*">
+                            </div>
+                            <button class="global-btn">Submit</button>
+                        </form>
+                        <button class="global-btn" id="close-popup-btn">Close pop-up</button>
+                    </div>
+                </div>             
+                <!-- Pop up end here -->
+
+            </div>
+
+            <!-- Table start here -->
             <table>
                 <thead>
                     <tr> 
@@ -56,6 +109,7 @@
                         <th>Description</th>
                         <th>Price</th>
                         <th>Stock</th>
+                        <th>Category</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -64,7 +118,10 @@
             </table>
         </div>
     </div>
+    <!-- Import script -->
     <script src="./product.js"></script>
+    <script src="../../../../utils/fn-logout-btn.js"></script>
+    <script src="../../../../utils/fn-close-open-popup.js"></script>
 </body>
 </html>
 
