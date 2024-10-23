@@ -47,13 +47,12 @@
                 </li>
             </ul>
         </nav>
+
         <!-- Table to display products -->
         <div class="container-table">
             <div>
-
                 <!-- Insert product -->
                 <button class="global-btn" id="open-popup-btn">Insert product</button>
-
                 <!-- Pop up start here -->
                 <div class="global-popup">
                     <div class="overlay"></div>
@@ -67,7 +66,6 @@
                                 <div class="form-group">
                                     <label for="product_desc">Product Description</label>
                                     <textarea name="product_desc" id="product_desc" placeholder="Enter product description"></textarea>
-
                                 </div>
                                 <div class="form-group">
                                     <label for="product_price">Product Price</label>
@@ -75,7 +73,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="product_stock">Product Stock</label>
-                                    <input type="number" name="product_stock" placeholder="Enter product stock">
+                                    <input type="number" name="product_stock" placeholder="Enter product stock" step="1">
                                 </div>
                                 <div class="form-group">
                                     <label for="category_id">Category</label>
@@ -89,21 +87,60 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label for="file">Choose Main picture</label>
+                                    <input type="file" id="file" name="file"  accept="image/*">
+                                </div>
+                                <div class="form-group">
                                     <label for="files">Choose pictures</label>
                                     <input type="file" id="files" name="files" multiple accept="image/*">
                                 </div>
-                                <button type="submit" class="global-btn">Preview</button>
+                                <button class="global-btn" id="preview-btn">Preview</button>
                                 <button type="submit" class="global-btn">Submit</button>
                             </form>
-                            <div class="product-preview"></div>
+
+                            <!-- Start preview product -->
+                            <div class="product-preview">
+                                <div class="container-pic-name">
+                                    <div>
+                                        <img class="main-img" src="../../../../../img/1.jpg" alt="">
+                                        <div class="thumbnail-container">
+                                            <img class="thumbnail active" src="../../../../../img/1.jpg" alt="main-pic" onclick="changeImage(this.src, this)">
+                                            <img class="thumbnail" src="../../../../../img/2.jpg" onclick="changeImage(this.src, this)">
+                                            <img class="thumbnail" src="../../../../../img/3.jpg" onclick="changeImage(this.src, this)">
+                                            <img class="thumbnail" src="../../../../../img/4.jpg" onclick="changeImage(this.src, this)">
+                                            <img class="thumbnail" src="../../../../../img/5.jpg" onclick="changeImage(this.src, this)">
+                                        </div>
+                                    </div>
+                                    <div class="product-details">
+                                                <!-- Product name -->
+                                        <h2></h2>
+                                                <!-- Product description -->
+                                        <ul id="preview-desc"></ul>
+                                                <!-- Price -->
+                                        <h3>Price</h3>
+                                        <ul id="preview-price">
+                                            <li></li>
+                                        </ul>
+                                                <!-- Stock -->
+                                        <h3>Stocks</h3>
+                                        <ul id="preview-stock">
+                                            <li></li>
+                                        </ul>
+                                                <!-- Category -->
+                                        <h3>Category</h3>
+                                        <ul id="preview-category">
+                                            <li></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End preview product -->
                         </div>
                         <button id="close-popup-btn">×</button>
                     </div>
                 </div>
                 <!-- Pop up end here -->
-
             </div>
-
             <!-- Table start here -->
             <table>
                 <thead>

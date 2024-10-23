@@ -1,6 +1,5 @@
 
 
-
 document.querySelector(".login-form").addEventListener("submit", async(e)=>{
     e.preventDefault();
     const formData = {
@@ -28,5 +27,11 @@ document.querySelector(".login-form").addEventListener("submit", async(e)=>{
     } catch (error) {
         console.log(error)
     }
+})
+
+$("document").ready(()=>{
+    $(".login-form").clikck(()=>{
+        $("button")
+    })
 })
 

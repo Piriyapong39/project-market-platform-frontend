@@ -26,8 +26,8 @@
     background-color: #ffffff;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 100%;
+    width: 100%;
+    max-width: 90%;
     max-height: 90vh;
     overflow-y: auto;
     z-index: 1001;
@@ -65,17 +65,14 @@
 .popup::-webkit-scrollbar {
     width: 10px;
 }
-
 .popup::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 10px;
 }
-
 .popup::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 10px;
 }
-
 .popup::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
