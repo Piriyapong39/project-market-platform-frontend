@@ -49,13 +49,12 @@ function insertTableData(productData) {
             <td>${e.product_price}</td>
             <td>${e.product_stock}</td>
             <td>${e.category_name}</td>
-            <button>Delete</button>
+            <td><button class="delete-product-btn">Delete</button></td>
         `;
         row.id = `${e.product_id}`
         tbody.appendChild(row);
     });
 }
-
 
 // function insert product in popup after click on submit
 document.querySelector(".form-insert-product").addEventListener("submit", async (e) => {
@@ -64,11 +63,10 @@ document.querySelector(".form-insert-product").addEventListener("submit", async 
     const form = document.querySelector(".form-insert-product")
     const formData = new FormData(form);
     try {
-        console.log("Sending request to server...");
         const response = await fetch("http://localhost:8080/products/manage-stock/insert-product", {
             method: "POST",
             headers: {
-                "authorization": "Bearer" + " " + token
+                "authorization": `Bearer ${token}`
             },
             body: formData
         });
@@ -91,17 +89,12 @@ document.querySelector(".form-insert-product").addEventListener("submit", async 
 document.querySelector("#preview-btn").addEventListener("click", async (e) => {
     e.preventDefault(); 
     try {
-
-
-
         const form = document.querySelector(".form-insert-product");
-        const formData = new FormData();
-        
+        const formData = new FormData();        
         const pictureFiles = form.querySelector('input[name="files"]').files;
         const mainPicture = form.querySelector('input[name="file"]').files[0];
-        
-
         const picturesArray = Array.from(pictureFiles);
+        console.log(picturesArray)
         if (mainPicture) {
             const mainPictureObject = new File(
                 [mainPicture], 
@@ -113,19 +106,15 @@ document.querySelector("#preview-btn").addEventListener("click", async (e) => {
             console.log("You must insert main picture");
             return;
         }
-        
+
         if(picturesArray.length > 5){
             throw new Error("picture files must less than 5 pictures");
         }
-        
         formData.append('product_name', form.product_name.value);
         formData.append('product_desc', form.product_desc.value);
         formData.append('product_price', form.product_price.value);
         formData.append('product_stock', form.product_stock.value);
         formData.append('category_id', form.category_id.value);
-        
-
-
         picturesArray.forEach(file => {
             formData.append('files', file);  
         });
