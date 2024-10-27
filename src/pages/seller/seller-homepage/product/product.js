@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const token = localStorage.getItem("token");
     if (!token) {
-        window.location.href = "../../../login/login.html";
+        // window.location.href = "../../../login/login.html";
         return;
     }
     try {
@@ -90,39 +90,65 @@ document.querySelector("#preview-btn").addEventListener("click", async (e) => {
     e.preventDefault(); 
     try {
         const form = document.querySelector(".form-insert-product");
-        const formData = new FormData();        
-        const pictureFiles = form.querySelector('input[name="files"]').files;
-        const mainPicture = form.querySelector('input[name="file"]').files[0];
-        const picturesArray = Array.from(pictureFiles);
-        console.log(picturesArray)
-        if (mainPicture) {
-            const mainPictureObject = new File(
-                [mainPicture], 
-                'mainPicture.jpg',  
-                { type: mainPicture.type }
-            );
-            picturesArray.unshift(mainPictureObject); 
-        } else {
-            console.log("You must insert main picture");
-            return;
+
+        /* this is for only main picture */
+        const fileInput = document.querySelector("input[name='file']");
+        const imagePreview = document.querySelector(".main-img");
+        const firstImage = document.querySelector(".thumbnail-container img:first-child")
+        if (fileInput.files && fileInput.files[0]) {
+            const reader = new FileReader();        
+            reader.onload = function(e) {
+                imagePreview.src = e.target.result;
+                // console.log(e.target.result)
+                firstImage.src = e.target.result
+            }
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+        /* End here */
+
+
+
+        /* This is for pictures in preview */
+        const imgPreviewPic = [
+            {
+                img: document.querySelector(".thumbnail:nth-child(2)")
+            },
+            {
+                img: document.querySelector(".thumbnail:nth-child(3)")
+            },
+            {
+                img: document.querySelector(".thumbnail:nth-child(4)")
+            },
+            {
+                img: document.querySelector(".thumbnail:nth-child(5)")
+            }
+        ]
+        
+        const filesInput = document.querySelector("#files")
+        if(filesInput.files.length > 4){
+            throw new Error("sub picture must less than 4 pics")
+        }
+        
+        if(filesInput.files){
+            console.log(filesInput.files)
+            for(let i=0; i<filesInput.files.length; i++){  
+                const reader = new FileReader();   
+                reader.onload = function(e) {
+                    imgPreviewPic[i].img.src = e.target.result
+                }
+                reader.readAsDataURL(filesInput.files[i]);
+            }
         }
 
-        if(picturesArray.length > 5){
-            throw new Error("picture files must less than 5 pictures");
-        }
-        formData.append('product_name', form.product_name.value);
-        formData.append('product_desc', form.product_desc.value);
-        formData.append('product_price', form.product_price.value);
-        formData.append('product_stock', form.product_stock.value);
-        formData.append('category_id', form.category_id.value);
-        picturesArray.forEach(file => {
-            formData.append('files', file);  
-        });
-        
-        console.log('Files to be uploaded:');
-        formData.getAll('files').forEach(file => {
-            console.log('File:', file.name, 'Size:', file.size, 'Type:', file.type);
-        });
+        /* End here */
+
+
+
+
+
+
+
+
 
 
         const formDataPreview = {
@@ -130,8 +156,11 @@ document.querySelector("#preview-btn").addEventListener("click", async (e) => {
             product_desc: form.product_desc.value,
             product_price: form.product_price.value,
             product_stock: form.product_stock.value,
-            catagory_id: form.catagory_id.val
+            category_id: form.category_id.value
         }
+
+        
+
 
         // config each data
         const productDetail = document.querySelector(".product-details")
@@ -158,6 +187,7 @@ document.querySelector("#preview-btn").addEventListener("click", async (e) => {
         const product_stock = productDetail.querySelector("#preview-stock li")
         product_stock.innerHTML = parseInt(formDataPreview.product_stock)
 
+
         // category
         const categoryVal = productDetail.querySelector("#preview-category li")
         const catagory_id = Number(formDataPreview.category_id)
@@ -181,8 +211,10 @@ document.querySelector("#preview-btn").addEventListener("click", async (e) => {
                 categoryVal.innerHTML = "Outfit"
         }   
         
+        console.log()
+
     } catch (error) {
-        alert(error)
+        // alert(error)
         console.log(error)
     }
 });
