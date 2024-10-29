@@ -3,5 +3,20 @@
 }
 
 
+.global-link{
+    margin-left: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgb(139, 211, 45);
+    font-size: 18px;
+    border:  none;
+    color: white;
+    cursor: pointer;
 
+}
 
+.global-link:hover{
+    background-color: rgb(107, 173, 20);
+    box-shadow: rgb(150, 145, 145) 0px 0px 5px;
+}
